@@ -23,6 +23,9 @@ class Vector3D {
     func difference(other: Vector3D) -> Vector3D {
         return Vector3D(x: x - other.x, y: y - other.y, z: z - other.z)
     }
+    static func randomArray(n: Int, r: Range<Double> = 1.1..<3.9) -> [Vector3D] {
+        return (1...n).map( { _ in Vector3D(x: Double.random(in: r), y: Double.random(in: r), z: Double.random(in: r))})
+    }
 }
 
 let vectorOne = Vector3D(x: 7, y: 2, z: 4)
@@ -34,3 +37,5 @@ vectorOne.product(other: vectorTwo)
 vectorOne.angle(other: vectorTwo)
 vectorOne.sum(other: vectorTwo)
 vectorOne.difference(other: vectorTwo)
+Vector3D.randomArray(n: 4)
+Vector3D.randomArray(n: 5, r: 1..<5.6)
