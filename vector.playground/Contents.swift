@@ -8,9 +8,18 @@ class Vector3D {
     func length() -> Double {
         return sqrt(x * x + y * y + z * z)
     }
-    
-        
+    func scalar (other: Vector3D) -> Double {
+        return (x * other.x + y * other.y + z * other.z)
+    }
+    func product (other: Vector3D) -> Vector3D {
+        return Vector3D(x: other.y * z - other.z * y, y: other.z * x - other.x * z, z: other.x * y - other.y * x)
+    }
 }
-let vectorOne = Vector3D(x: 2, y: 2, z: 2)
+
+let vectorOne = Vector3D(x: 7, y: 2, z: 4)
+let vectorTwo = Vector3D(x: 3, y: 4, z: 5)
 
 vectorOne.length()
+vectorOne.scalar(other: vectorTwo)
+vectorOne.product(other: vectorTwo)
+
