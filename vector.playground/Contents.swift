@@ -17,6 +17,12 @@ class Vector3D {
     func angle(other: Vector3D) -> Double {
         return (scalar(other: other)) / (length() * other.length())
     }
+    func sum(other: Vector3D) -> Vector3D {
+        return Vector3D(x: x + other.x, y: y + other.y, z: z - other.z)
+    }
+    func difference(other: Vector3D) -> Vector3D {
+        return Vector3D(x: x - other.x, y: y - other.y, z: z - other.z)
+    }
 }
 
 let vectorOne = Vector3D(x: 7, y: 2, z: 4)
@@ -26,4 +32,5 @@ vectorOne.length()
 vectorOne.scalar(other: vectorTwo)
 vectorOne.product(other: vectorTwo)
 vectorOne.angle(other: vectorTwo)
-
+vectorOne.sum(other: vectorTwo)
+vectorOne.difference(other: vectorTwo)
